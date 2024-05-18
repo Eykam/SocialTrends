@@ -14,6 +14,6 @@ app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, "./client", "build", "index.html"));
 });
 
-app.listen(PORT, "::", () => {
+app.listen(PORT, process.env.MODE === "PROD" ? "0.0.0.0" : "::", () => {
   console.log("server started on port 3000");
 });
