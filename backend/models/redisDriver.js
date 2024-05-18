@@ -13,10 +13,10 @@ let client;
   });
 
   client.on("error", (err) => console.log(err));
-  client.on("connect", () =>
-    console.log("Connecting to", `redis://${process.env.REDIS_URL}:6379`)
+  client.on("connect", () => console.log("Connecting"));
+  client.on("reconnecting", () =>
+    console.log("Reconnecting to", `redis://${process.env.REDIS_URL}:6379`)
   );
-  client.on("reconnecting", () => console.log("Reconnecting"));
   client.on("ready", () => console.log("Ready"));
   client.on("end", () => console.log("Redis connection closed"));
 })();
