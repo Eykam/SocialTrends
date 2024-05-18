@@ -6,17 +6,13 @@ let client;
 
 (async () => {
   client = redis.createClient({
-    host: `${process.env.REDIS_URL}`,
-    port: 6379,
-    socket: {
-      family: process.env.MODE === "PROD" ? 6 : 4,
-    },
+    url: `${process.env.REDIS_URL}`,
   });
 
   client.on("error", (err) => console.log(err));
   client.on("connect", () => console.log("Connecting"));
   client.on("reconnecting", () =>
-    console.log("Reconnecting to", `redis://${process.env.REDIS_URL}:6379`)
+    console.log("Reconnecting to", process.env.REDIS_URL)
   );
   client.on("ready", () => console.log("Ready"));
   client.on("end", () => console.log("Redis connection closed"));
