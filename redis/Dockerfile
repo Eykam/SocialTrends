@@ -1,8 +1,10 @@
 FROM redis:latest
 
-WORKDIR /data
 
 COPY ./data ./data
+
+WORKDIR /data
+
 
 EXPOSE 6379
 
