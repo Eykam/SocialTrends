@@ -20,7 +20,7 @@ const app = express();
 const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const PORT = process.env.PORT || "9000";
+const PORT = process.env.PORT || 3000;
 const { getAsync, setAsync, expireAsync } = require("./models/redisDriver");
 // app.use(express.static(path.join(__dirname, "../frontend")));
 
@@ -256,6 +256,6 @@ app.get("/geoData", async (req, res) => {
 
 //Route to get users by region, for frontend to make map object of views by region or something similar
 
-app.listen(PORT, () => {
+app.listen(PORT, process.env.MODE === "PROD" ? "::" : "0.0.0.0", () => {
   console.log(`Listening on http://localhost:${PORT}`);
 });
