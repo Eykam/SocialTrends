@@ -7,6 +7,7 @@ let client;
 (async () => {
   client = redis.createClient({
     url: `redis://${process.env.REDIS_URL}:6379`,
+    family: process.env.MODE == "PROD" ? 6 : 4,
   });
 
   client.on("error", (err) => console.log(err));
