@@ -13,7 +13,7 @@ COPY ./client/package-lock.json ./client/package-lock.json
 COPY ./client/public ./client/public
 COPY ./client/src ./client/src
 
-RUN cd ./client && npm install --production && npm run build
+RUN cd ./client && npm install --omit-dev=true && npm run build
 
 COPY ./index.js ./index.js
 

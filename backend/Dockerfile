@@ -8,4 +8,4 @@ COPY ./ ./
 
 RUN npm install
 
-CMD ["sleep", "3", "&&", "node", "index.js"]
+CMD sleep 3 && npm run start
