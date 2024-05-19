@@ -6,7 +6,7 @@ let client;
 
 (async () => {
   client = redis.createClient({
-    url: process.env.REDIS_HOST,
+    url: process.env.REDIS_URL,
   });
 
   client.on("error", (err) => console.log(err));
