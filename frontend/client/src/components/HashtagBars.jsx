@@ -68,11 +68,9 @@ const HashtagBars = () => {
 
   return (
     <Box height="100%" width="95%">
-      {isMobile && (
-        <h2 style={{ color: colors.tanAccent[500], margin: "5px" }}>
-          Most Popular Hashtags
-        </h2>
-      )}
+      <h2 style={{ color: colors.tanAccent[500], margin: "5px" }}>
+        Most Popular Hashtags
+      </h2>
 
       <Box
         height="95%"
@@ -81,15 +79,17 @@ const HashtagBars = () => {
         justifyContent="space-evenly"
       >
         <Box height="95%" width="45%">
-          <h3
-            style={{
-              color: colors.tanAccent[500],
-              margin: "5px",
-              textAlign: "center",
-            }}
-          >
-            % of Posts w/ Tag
-          </h3>
+          {isMobile && (
+            <h3
+              style={{
+                color: colors.tanAccent[500],
+                margin: "5px",
+                textAlign: "center",
+              }}
+            >
+              % of Posts w/ Tag
+            </h3>
+          )}
           <ResponsiveBar
             data={formattedPercentageData}
             theme={{
