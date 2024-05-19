@@ -2,7 +2,7 @@ FROM redis:latest
 
 WORKDIR /app
 
-COPY ./newData ./data
+COPY ./data ./data
 COPY ./redis.conf ./redis.conf
 
 
