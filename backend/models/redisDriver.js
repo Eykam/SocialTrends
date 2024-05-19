@@ -6,7 +6,7 @@ let client;
 
 (async () => {
   client = redis.createClient({
-    url: `redis://default:Thc!6154@viaduct.proxy.rlwy.net:37277`,
+    url: process.env.REDIS_HOST,
   });
 
   client.on("error", (err) => console.log(err));
