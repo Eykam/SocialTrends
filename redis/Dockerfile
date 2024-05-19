@@ -1,5 +1,6 @@
 FROM redis:latest
 
+WORKDIR /
 
 COPY ./data ./data
 COPY ./redis.conf ./redis.conf
