@@ -6,7 +6,7 @@ let client;
 
 (async () => {
   client = redis.createClient({
-    url: "redis://default:Thc!6154@social-trends-redis:6379",
+    url: process.env.REDIS_URL,
   });
 
   client.on("error", (err) => console.log(err));
